@@ -7,9 +7,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-	"flask": "cd api/venv/Scripts ; ./Activate.ps1 ; flask run"
+    "flask": "cd api/venv/Scripts ; ./Activate.ps1 ; flask run"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
     "next": "10.0.6",
     "react": "17.0.1",
     "react-dom": "17.0.1"
