@@ -36,3 +36,4 @@ yarn-error.log*
 # python local venv
 api/venv/*
 !api/venv/requirements.txt
+!api/venv/*.py

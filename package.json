@@ -2,10 +2,12 @@
   "name": "vrsms",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:5000",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+	"flask": "cd api/venv/Scripts ; ./Activate.ps1 ; flask run"
   },
   "dependencies": {
     "next": "10.0.6",
