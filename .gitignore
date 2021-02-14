@@ -35,4 +35,4 @@ yarn-error.log*
 
 # python local venv
 /api/*
-!/api/requirements.txt
+!/api/venv/requirements.txt
