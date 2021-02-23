@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "flask": "cd api/venv/bin && source activate && flask run"
+    "flask": "./flask.sh"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
