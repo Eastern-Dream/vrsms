@@ -1,12 +1,16 @@
+from sqlite3 import *
+from sqlalchemy import *
+from sqlalchemy.orm import *
 from flask import Flask
- 
+import models
+
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db.init_app(app)
- 
-@app.before_first_request
-def create_table():
-    db.create_all()
- 
-app.run(host='localhost', port=5000)
+models.main()
+
+DATABASE = "sqlite:///database.db"
+
+engine = create_engine(DATABASE)
+session = Session(engine)
+
+results = session.query(Customer).all()
+print(results)

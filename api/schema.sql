@@ -6,7 +6,7 @@ CREATE TABLE customer (
     birth_date INTEGER NOT NULL,
     home_address TEXT NOT NULL,
     phone_number TEXT NOT NULL,
-    email_address TEXT NOT NULL,
+    email_address TEXT NOT NULL
 );
 
 CREATE TABLE employee (
@@ -18,7 +18,7 @@ CREATE TABLE employee (
     home_address TEXT NOT NULL,
     phone_number TEXT NOT NULL,
     work_availability INTEGER NOT NULL,
-    hour_worked INTEGER,
+    hour_worked INTEGER
 );
 
 CREATE TABLE dvd (
@@ -31,17 +31,17 @@ CREATE TABLE dvd (
     sell_price REAL NOT NULL,
     amount_instock INTEGER NOT NULL,
     amount_bought INTEGER NOT NULL,
-    amount_sold INTEGER NOT NULL,
+    amount_sold INTEGER NOT NULL
 );
 
 CREATE TABLE administrator (
     admin_id INTEGER PRIMARY KEY,
     username TEXT UNIQUE NOT NULL,
-    password_hash TEXT NOT NULL,
+    password_hash TEXT NOT NULL
 );
 
 CREATE TABLE credit_card (
-    card_number TEXT PRIMARY KEY;
+    card_number TEXT PRIMARY KEY,
     customer_id INTEGER NOT NULL,
     first_name TEXT NOT NULL,
     last_name TEXT NOT NULL,
@@ -54,14 +54,14 @@ CREATE TABLE rental (
     customer_id INTEGER NOT NULL,
     dvd_id INTEGER NOT NULL,
     rent_date INTEGER NOT NULL,
-    FOREIGN KEY (customer_id) REFERENCES customer(customer_id)
+    FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
     FOREIGN KEY (dvd_id) REFERENCES dvd(dvd_id)
 );
 
 CREATE TABLE request (
     customer_id INTEGER NOT NULL,
     dvd_id INTEGER NOT NULL,
-    FOREIGN KEY (customer_id) REFERENCES customer(customer_id)
-    FOREIGN KEY (dvd_id) REFERENCES dvd(dvd_id)
+    FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
+    FOREIGN KEY (dvd_id) REFERENCES dvd(dvd_id),
     PRIMARY KEY (customer_id, dvd_id)
 );
