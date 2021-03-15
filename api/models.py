@@ -7,17 +7,17 @@ Base = declarative_base()
 def main():
     
 
-    customer = Table(
-        "customer",
-        Base.metadata,
-        Column("customer_id", Integer),
-        Column("first_name", String),
-        Column("last_name", String),
-        Column("license_id", String),
-        Column("birth_date", Date),
-        Column("home_address", String),
-        Column("email_address", String)
-    )
+    # customer = Table(
+    #     "customer",
+    #     Base.metadata,
+    #     Column("customer_id", Integer),
+    #     Column("first_name", String),
+    #     Column("last_name", String),
+    #     Column("license_id", String),
+    #     Column("birth_date", Date),
+    #     Column("home_address", String),
+    #     Column("email_address", String)
+    # )
 
     # employee = Table(
     #     "employee",
