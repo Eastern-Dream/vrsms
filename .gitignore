@@ -34,10 +34,4 @@ yarn-error.log*
 .vercel
 
 # python local venv
-api/venv/*
-
-# VSCode
-api/.vs
-api/.vscode
-api/__pycache__
-
+/venv
