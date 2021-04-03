@@ -34,4 +34,7 @@ yarn-error.log*
 .vercel
 
 # python local venv
-django/venv
+database/venv
+
+# VSCode stuff
+.vscode
