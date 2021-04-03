@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "django": "python manage.py runserver"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
