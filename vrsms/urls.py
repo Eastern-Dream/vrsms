@@ -1,4 +1,4 @@
-"""database URL Configuration
+"""vrsms URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+import vrsms.views as views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('customer', views.show_customer),
+    path('edit/<int:id>', views.edit_customer),
+    path('update/<int:id>', views.update_customer),
+    path('delete/<int:id>', views.destroy)
 ]
