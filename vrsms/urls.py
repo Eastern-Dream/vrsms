@@ -18,9 +18,13 @@ from django.urls import path
 import vrsms.views as views
 
 urlpatterns = [
+    # Django automatically generated admin page
     path('admin/', admin.site.urls),
-    path('customer', views.show_customer),
-    path('edit/<int:id>', views.edit_customer),
-    path('update/<int:id>', views.update_customer),
-    path('delete/<int:id>', views.destroy)
+
+    # Customer CRUD path
+    # path('create/<int:id>', views.create_customer),
+    path('customer'         , views.read_customer),
+    # path('update/<int:id>', views.update_customer),
+    # path('delete/<int:id>', views.delete_customer),
+
 ]
