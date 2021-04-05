@@ -18,23 +18,13 @@
     <tbody>
 {% for tuple, field in query %}
     <tr>
-        <td>{{ tuple.field }}</td>
-        <!-- <td>{{ customer.first_name }}</td>
-        <td>{{ customer.last_name }}</td>
-        <td>{{ customer.license_id }}</td>
-        <td>{{ customer.home_address }}</td>
-        <td>{{ customer.phone_number }}</td>
-        <td>{{ customer.email_address }}</td>
-        <td>
-            <a href="/edit/{{ customer.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
-            <a href="/delete/{{ customer.id }}">Delete</a>
-        </td> -->
+        <td>{{ tuple }}.{{ field }}</td>
     </tr>
 {% endfor %}
     </tbody>
 </table>
 <br>
 <br>
-<center><a href="/customer" class="btn btn-primary">Add New Record</a></center>
+<center><a href="customer/create" class="btn btn-primary">Add New Record</a></center>
 </body>
 </html>
