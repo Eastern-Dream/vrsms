@@ -36,7 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'vrsms'
+    'django_tables2',
+    'vrsms',
 ]
 
 MIDDLEWARE = [

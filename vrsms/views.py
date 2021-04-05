@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from vrsms.forms import *
 from vrsms.models import *
+from vrsms.tables import *
 from typing import List
 from typing import Dict
 
@@ -18,7 +19,7 @@ def make_readable_fields(fields: List, prefix='') -> List:
 
 def construct_read_context(object, prefix='') -> Dict:
     fields = [field.name for field in object._meta.fields]
-    query = zip(object.objects.all(), fields)
+    query = object.objects.all()
     readable_fields = make_readable_fields(fields, prefix)
     context = {'query':query, 'readable_fields':readable_fields}
     return context
@@ -52,6 +53,7 @@ def create_customer(request):
 # Read group
 def read_customer(request):
     context = construct_read_context(Customer, 'Customer')
+    context.update({'table':CustomerTable(Customer.objects.all())})
     return render(request, "read.html", context)
 
 # def read_employee(request):
