@@ -16,15 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import vrsms.views as views
+from vrsms.forms import *
 
 urlpatterns = [
     # Django automatically generated admin page
     path('admin/', admin.site.urls),
 
     # Customer CRUD path
-    path('customer/create', views.create_customer),
-    path('customer'         , views.read_customer),
-    # path('update/<int:id>', views.update_customer),
+    path('customer/create',          views.create_customer),
+    path('customer',                 views.read_customer),
+    path('customer/update/<int:pk>', CustomerUpdate.as_view()),
     # path('delete/<int:id>', views.delete_customer),
 
 ]

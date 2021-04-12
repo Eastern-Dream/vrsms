@@ -120,3 +120,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [ os.path.join(BASE_DIR,'static') ]
+
+# Django Tables Settings
+
+DJANGO_TABLES2_TEMPLATE = "django_tables2/bootstrap4.html"

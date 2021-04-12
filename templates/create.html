@@ -2,43 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Create</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <title>Create New {{ entity }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/create.css' %}"/>
 </head>
 <body>
-
+<center><h4>Create New {{ entity }}</h4></center>
 <form action="create" method="post">
     {% csrf_token %}
-    <table>{{ form.as_table }}</table>
-    <input type="submit" value="Submit">
+    <table style="margin-left:auto; margin-right:auto;">
+      {{ form.as_table }}
+    </table>
+    <input class="center-block" type="submit" value="Submit">
 </form>
-
-{% comment %} <form method="POST" class="post-form" action="create">
-{% csrf_token %}  
-<div class="container">
-<br>
-<div class="form-group row">
-<label class="col-sm-1 col-form-label"></label>
-<div class="col-sm-4">
-<h3>Create Details</h3>
-</div>
-  </div>
-  {% for field, readable_field in fields %}
-<div class="form-group row">
-<label class="col-sm-2 col-form-label">{{ readable_field }}</label>
-<div class="col-sm-4">
-<input type="text"/>
-</div>
-  </div>
-  {% endfor %}
-
-<div class="form-group row">
-<label class="col-sm-1 col-form-label"></label>
-<div class="col-sm-4">
-<button type="submit" class="btn btn-success">Create</button>
-</div>
-  </div>
-</div>
-</form> {% endcomment %}
 </body>
 </html>

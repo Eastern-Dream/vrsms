@@ -1,10 +1,16 @@
 from django.forms import ModelForm
+from django.views.generic.edit import UpdateView
 from vrsms.models import *
 
 class CustomerForm(ModelForm):
     class Meta:
         model = Customer
         fields = '__all__'
+
+class CustomerUpdate(UpdateView):
+    template_name = 'update.html'
+    model = Customer
+    fields = '__all__'
 
 class DvdForm(ModelForm):
     class Meta:
