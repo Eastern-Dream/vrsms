@@ -5,3 +5,6 @@ venv
 
 # VSCode stuff
 .vscode
+
+# Pycache
+vrsms/__pycache__
