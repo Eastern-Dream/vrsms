@@ -1,5 +1,7 @@
+from django.urls import reverse_lazy
 from django.forms import ModelForm
 from django.views.generic.edit import UpdateView
+from django.views.generic.edit import DeleteView
 from vrsms.models import *
 
 class CustomerForm(ModelForm):
@@ -11,6 +13,11 @@ class CustomerUpdate(UpdateView):
     template_name = 'update.html'
     model = Customer
     fields = '__all__'
+
+class CustomerDelete(DeleteView):
+    template_name = 'delete.html'
+    model = Customer
+    success_url = reverse_lazy('read_customer')
 
 class DvdForm(ModelForm):
     class Meta:

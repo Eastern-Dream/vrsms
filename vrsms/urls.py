@@ -23,9 +23,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # Customer CRUD path
-    path('customer/create',          views.create_customer),
-    path('customer',                 views.read_customer),
-    path('customer/update/<int:pk>', CustomerUpdate.as_view()),
+    path('customer/create',          views.create_customer,    name='create_customer'),
+    path('customer',                 views.read_customer,      name='read_customer'),
+    path('customer/update/<slug:pk>', CustomerUpdate.as_view(), name='update_customer'),
+    path('customer/delete/<slug:pk>', CustomerDelete.as_view(), name='delete_customer'),
     # path('delete/<int:id>', views.delete_customer),
 
 ]

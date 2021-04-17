@@ -37,11 +37,11 @@ def update_customer(request, id):
         return redirect("/customer")
     return render(request, 'update.html', {'form':form, 'entity':"Customer"})
 
-
-# def delete(request, id):
-#     customer = Customer.objects.get(id=id)
-#     customer.delete()
-#     return redirect("/show")
+# Delete Group
+def delete(request, id):
+    customer = Customer.objects.get(id=id)
+    customer.delete()
+    return redirect("/customer")
 
 # def make_readable_fields(fields: List, prefix='') -> List:
 #     result = []
