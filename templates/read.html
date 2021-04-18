@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>VRSMS Customer</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <title>VRSMS {{ entity }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 {% load django_tables2 %}
 {% render_table table %}
-<center><a href="customer/create" class="btn btn-primary">Add New Record</a></center>
+<center><a href="{{ entity }}/create" class="btn btn-primary">Add New Record</a></center>
+<br>
+<center><a href="/" class="btn btn-primary">Main Menu</a></center>
 </body>
 </html>

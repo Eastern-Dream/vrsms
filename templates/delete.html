@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Delete {{ entity }}</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/delete.css' %}"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <body>
 <center><h4>Delete {{ entity }}</h4></center>
-<div class="form">
+<div class="text-center">
     <form method="post">
     {% csrf_token %}
     <p>Are you sure you want to delete "{{ object }}"?</p>
-    <input class="center-block" type="submit" value="Confirm">
+    <input type="submit" value="Confirm">
 </form>
 </div>
+<br>
+<center><a href="/" class="btn btn-primary">Main Menu</a></center>
 </body>
 </html>

@@ -8,6 +8,8 @@ class Customer(models.Model):
     home_address = models.CharField(max_length=200)
     phone_number = models.CharField(max_length=200)
     email_address = models.CharField(max_length=200)
+    def __str__(self):
+        return f"ID: {self.id} | Name: {self.first_name} {self.last_name}"
 
 class Employee(models.Model):
     username = models.CharField(max_length=200)
@@ -18,6 +20,8 @@ class Employee(models.Model):
     phone_number = models.CharField(max_length=200)
     work_availability = models.BooleanField()
     hour_worked = models.IntegerField()
+    def __str__(self):
+        return f"ID: {self.id} | Name: {self.first_name} {self.last_name}"
 
 class Dvd(models.Model):
     title = models.CharField(max_length=200)
@@ -29,6 +33,8 @@ class Dvd(models.Model):
     amount_instock = models.IntegerField()
     amount_bought = models.IntegerField()
     amount_sold = models.IntegerField()
+    def __str__(self):
+        return f"ID: {self.id} | Title: {self.title}"
 
 class Administrator(models.Model):
     username = models.CharField(max_length=200)

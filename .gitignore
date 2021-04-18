@@ -7,4 +7,4 @@ venv
 .vscode
 
 # Pycache
-__pycache__
+vrsms/__pycache__
