@@ -7,4 +7,8 @@ venv
 .vscode
 
 # Pycache
+<<<<<<< HEAD
 vrsms/__pycache__
+=======
+*.pyc
+>>>>>>> 0ddcc3c0d6d479d87c7a1f6d85dcf3aaabd4501c

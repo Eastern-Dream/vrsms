@@ -2,14 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>VRSMS {{ entity }}</title>
+    <title>Delete {{ entity }}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <body>
-{% load django_tables2 %}
-{% render_table table %}
-<center><a href="{{ entity }}/create" class="btn btn-primary">Add New Record</a></center>
+<center><h4>Delete {{ entity }}</h4></center>
+<div class="text-center">
+    <form method="post">
+    {% csrf_token %}
+    <p>Are you sure you want to delete "{{ object }}"?</p>
+    <input type="submit" value="Confirm">
+</form>
+</div>
 <br>
 <center><a href="/" class="btn btn-primary">Main Menu</a></center>
 </body>
