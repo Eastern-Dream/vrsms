@@ -19,15 +19,10 @@ class EmployeeTable(tables.Table):
     class Meta:
         model = Employee
 
-class CreditCardTable(tables.Table):
-    update = tables.TemplateColumn('<a href="{% url "update_creditcard" record.id %}">Click to update</a>')
-    delete = tables.TemplateColumn('<a href="{% url "delete_creditcard" record.id %}">Click to delete</a>')
-    class Meta:
-        model = CreditCard
-
 class RentalTable(tables.Table):
-    update = tables.TemplateColumn('<a href="{% url "update_rental" record.id %}">Click to update</a>')
+    # update = tables.TemplateColumn('<a href="{% url "update_rental" record.id %}">Click to update</a>')
     delete = tables.TemplateColumn('<a href="{% url "delete_rental" record.id %}">Click to delete</a>')
+    returned = tables.TemplateColumn('<a href="{% url "return_rental" record.id %}">Process rental return</a>')
     class Meta:
         model = Rental
 

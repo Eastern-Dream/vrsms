@@ -58,30 +58,20 @@ class EmployeeDelete(DeleteView):
     model = Employee
     success_url = reverse_lazy('read_employee')
 
-# Credit Card CUD Form
-class CreditCardCreate(CreateView):
-    template_name = 'create.html'
-    model = CreditCard
-    fields = '__all__'
-    success_url = reverse_lazy('read_creditcard')
-
-class CreditCardUpdate(UpdateView):
-    template_name = 'update.html'
-    model = CreditCard
-    fields = '__all__'
-    success_url = reverse_lazy('read_creditcard')
-
-class CreditCardDelete(DeleteView):
-    template_name = 'delete.html'
-    model = CreditCard
-    success_url = reverse_lazy('read_creditcard')
-
 # Rental CUD Form
-class RentalCreate(CreateView):
-    template_name = 'create.html'
-    model = Rental
-    fields = '__all__'
-    success_url = reverse_lazy('read_rental')
+class RentalForm(ModelForm):
+    class Meta:
+        model = Rental
+        fields = '__all__'
+
+    def clean(self):
+        rental_amount = Rental.objects.filter(customer_id=self.cleaned_data['customer_id'])
+        amount_instock = self.cleaned_data['dvd_id'].amount_instock
+        if amount_instock == 0:
+            raise ValidationError("This DVD is not in stock.")
+        if rental_amount.count() == 3:
+            raise ValidationError("Customer can only have maximum of 3 active rentals.")
+        return self.cleaned_data
 
 class RentalUpdate(UpdateView):
     template_name = 'update.html'

@@ -22,7 +22,9 @@ urlpatterns = [
     # Django automatically generated admin page
     path('admin/', admin.site.urls),
 
+    # Main Menu
     path('', views.menu),
+
     # Customer CRUD path
     path('customer/create',           CustomerCreate.as_view(), name='create_customer'),
     path('customer',                  views.read_customer,      name='read_customer'),
@@ -41,14 +43,8 @@ urlpatterns = [
     path('employee/update/<slug:pk>', EmployeeUpdate.as_view(), name='update_employee'),
     path('employee/delete/<slug:pk>', EmployeeDelete.as_view(), name='delete_employee'),
 
-    # Credit Card CRUD path
-    path('creditcard/create',           CreditCardCreate.as_view(),    name='create_creditcard'),
-    path('creditcard',                  views.read_creditcard,      name='read_creditcard'),
-    path('creditcard/update/<slug:pk>', CreditCardUpdate.as_view(), name='update_creditcard'),
-    path('creditcard/delete/<slug:pk>', CreditCardDelete.as_view(), name='delete_creditcard'),
-
     # Rental CRUD path
-    path('rental/create',           RentalCreate.as_view(),    name='create_rental'),
+    path('rental/create',           views.create_rental,    name='create_rental'),
     path('rental',                  views.read_rental,      name='read_rental'),
     path('rental/update/<slug:pk>', RentalUpdate.as_view(), name='update_rental'),
     path('rental/delete/<slug:pk>', RentalDelete.as_view(), name='delete_rental'),
